@@ -1,17 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Mis Notas
-    </ion-title>
+    <ion-title>Notas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addNote()">Añadir Nota</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Mis Notas</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let note of notes" (click)="viewNote(note)">
+      <ion-label>{{ note.title }}</ion-label>
+    </ion-item>
+  </ion-list>
 
-  <app-explore-container name="Notas"></app-explore-container>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addNote()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

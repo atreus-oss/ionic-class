@@ -3,7 +3,7 @@ import {
   IonHeader, IonToolbar, IonTitle,
   IonContent, IonList, IonAvatar,
   IonItem, IonLabel, IonButton,
-  IonInput
+  IonInput, IonItemGroup, IonItemDivider
 } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
@@ -16,9 +16,18 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
     IonHeader, IonToolbar, IonTitle,
     IonContent, ExploreContainerComponent, IonAvatar,
     IonList, IonItem, IonLabel,
-    IonButton, IonInput
+    IonButton, IonInput, IonItemGroup,
+    IonItemDivider
   ],
 })
 export class Tab3Page {
+  user = {
+    name: 'Arthur Morgan',
+    avatarUrl: 'https://res.cloudinary.com/dpv9jzbfs/image/upload/v1728067582/mi-cara-cuando-version-kanye-wes_dmsspd.jpg',
+  };
+
+  get welcomeMessage(): string{
+    return `Bienvenido, ${this.user.name}!`
+  }
   constructor() {}
 }

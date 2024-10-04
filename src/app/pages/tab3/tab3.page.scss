@@ -7,45 +7,46 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: -2;
     opacity: 1;
+    filter: blur(9px);
 }
-  
+
 .login-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    justify-content: flex-start;
+    margin-top: 20px;
     padding: 20px;
     z-index: 1;
-    background: rgba(255, 255, 255, 0.329);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(9px); /* Efecto de desenfoque */
+    //backdrop-filter: blur(9px); /* Efecto de desenfoque */
+    position: relative;
 }
-  
-.login-avatar {
-    display: block;
-    margin: 20px auto;
-    width: 100px;
-    height: 100px;
+
+.login-avatar { 
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
 }
-  
+
 .login-title {
     font-size: 24px;
     font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #333;
-    text-align: center;
-}
-  
-.login-subtitle {
-    font-size: 16px;
     color: #000000;
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 5px;
+    flex-direction: column;
+}
+
+
+.info {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px)
 }
