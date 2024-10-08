@@ -5,7 +5,6 @@ import {
   IonLabel, IonFab, IonFabButton, IonButton,
   IonIcon, AlertController, IonButtons
 } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 @Component({
   selector: 'app-tab1',
@@ -14,7 +13,7 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
   standalone: true,
   imports: [
     IonHeader, IonToolbar, IonTitle,
-    IonContent, ExploreContainerComponent, IonList,
+    IonContent, IonList,
     IonItem, IonLabel, IonFab,
     IonFabButton, IonIcon, IonButtons, IonButton
   ],
