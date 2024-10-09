@@ -1,16 +1,18 @@
-<ion-header [translucent]="true">
+<ion-header *ngIf="noticia">
   <ion-toolbar>
-    <ion-title>detalle-noticia</ion-title>
+    <ion-title>{{ noticia.titulo }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  @for (item of cardData; track item){
-    <ion-title>{{item.title}}</ion-title>
-    <ion-title>{{item.fecha}}</ion-title>
-    <ion-title>{{item.subtitulo}}</ion-title>
-
-    <img src="{{item.imageUrl}}" alt="image">
-    <p class="short">{{item.description}}</p>
-  }
+<ion-content *ngIf="noticia">
+  <img [src]="noticia.imageUrl" alt="Imagen Noticia"/>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ noticia.titulo }}</ion-card-title>
+      <ion-card-subtitle>Publicado el: {{ noticia.fecha }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ noticia.description }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

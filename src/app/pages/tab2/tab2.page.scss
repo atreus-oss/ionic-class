@@ -1,0 +1,12 @@
+.short {
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+  
+    text-overflow: ellipsis; 
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+}

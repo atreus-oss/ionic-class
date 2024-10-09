@@ -1,29 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
 import { NoticiaService } from '../tab2/noticia.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-noticia',
   templateUrl: './detalle-noticia.page.html',
   styleUrls: ['./detalle-noticia.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule]
 })
 export class DetalleNoticiaPage implements OnInit {
-  cardData: any;
-  id!: string;
+  noticia: any;
 
   constructor(private noticiaService: NoticiaService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id') || '';
-    this.obt_noticia();
+    const id = Number(this.route.snapshot.paramMap.get("id"));
+    this.noticia = this.noticiaService.getNoticia(id);
   }
 
-  obt_noticia() {
-    this.cardData = this.noticiaService.getCardData().find(noticia => noticia.id === this.id);
-  }
 }

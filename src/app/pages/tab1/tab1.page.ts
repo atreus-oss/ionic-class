@@ -1,27 +1,18 @@
 import { Component } from '@angular/core';
-import { 
-  IonHeader, IonToolbar, IonTitle,
-  IonContent, IonList, IonItem,
-  IonLabel, IonFab, IonFabButton, IonButton,
-  IonIcon, AlertController, IonButtons
-} from '@ionic/angular/standalone';
+import {  AlertController } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [
-    IonHeader, IonToolbar, IonTitle,
-    IonContent, IonList,
-    IonItem, IonLabel, IonFab,
-    IonFabButton, IonIcon, IonButtons, IonButton
-  ],
+  imports: [IonicModule, CommonModule],
 })
 export class Tab1Page {
   notes = [
-    { title: 'Nota 1', content: 'Contenido de la nota 1' },
-    { title: 'Nota 2', content: 'Contenido de la nota 2' }
+    { title: 'Notas', content: ' ' }
   ];
 
   constructor(private alertCtrl: AlertController) {}
