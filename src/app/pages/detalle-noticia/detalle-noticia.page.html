@@ -1,6 +1,7 @@
 <ion-header *ngIf="noticia">
   <ion-toolbar>
     <ion-title>{{ noticia.titulo }}</ion-title>
+    <ion-button slot="start" [routerLink]="['/tabs/tab2']"><ion-icon aria-hidden="true" name="arrow-back-outline"></ion-icon></ion-button>
   </ion-toolbar>
 </ion-header>
 
